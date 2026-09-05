@@ -113,12 +113,21 @@ const productos = [
 
 const listaProductos = document.getElementById("lista-productos");
 
-productos.forEach(function(producto) {
+if (listaProductos) {
+
+    productos.forEach(function(producto) {
 
     const articulo = document.createElement("article");
 
     const nombre = document.createElement("h3");
     nombre.textContent = producto.nombre;
+
+    const enlace = document.createElement("a");
+
+    enlace.href =
+    "detalle-producto.html?codigo=" + producto.codigo;
+
+    enlace.textContent = "Ver detalle";
 
     const marca = document.createElement("p");
     marca.textContent = "Marca: " + producto.marca;
@@ -140,6 +149,9 @@ productos.forEach(function(producto) {
     articulo.appendChild(precio);
     articulo.appendChild(stock);
     articulo.appendChild(boton);
+    articulo.appendChild(enlace);
 
     listaProductos.appendChild(articulo);
 });
+
+}
