@@ -49,7 +49,7 @@ section {
     margin: 0 auto;
 }
 
-/* Página principal */
+/* Estilo para página principal */
 
 main section {
     margin-bottom: 40px;
@@ -73,4 +73,27 @@ article a {
     display: inline-block;
     margin-top: 10px;
     text-decoration: none;
+}
+
+/* Página de estilo para productos */
+
+#lista-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#lista-productos article {
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+
+#lista-productos h3 {
+    margin-top: 0;
+}
+
+#lista-productos button {
+    padding: 10px 15px;
+    cursor: pointer;
 }
