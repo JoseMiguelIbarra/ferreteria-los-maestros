@@ -1,71 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <title>Panel de Administración | Ferretería Los Maestros</title>
+    <script src="js/validaciones.js" defer></script>
+    <title>Administración | Ferretería Los Maestros</title>
 </head>
+
 <body>
+
     <header>
-        <h1>Panel de Administración</h1>
-        <nav aria-label="Navegación de administrador">
+        <h1>Ferretería Los Maestros</h1>
+        <nav aria-label="Navegación principal">
             <ul>
-                <li><a href="index.html">Volver a la Tienda</a></li>
-                <li><a href="#seccion-productos">Gestión de Productos</a></li>
-                <li><a href="#seccion-usuarios">Gestión de Usuarios</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="login.html">Iniciar sesión</a></li>
+                <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="admin.html">Admin</a></li>
+                <li><a href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="seccion-productos" class="admin-section">
-            <h2>Gestión de Productos</h2>
-            
-            <div class="form-container">
-                <h3>Agregar Nuevo Producto</h3>
-                <form id="form-admin-producto" action="#" method="POST">
-                    <div class="input-group">
-                        <label for="prod-nombre">Nombre de la herramienta:</label>
-                        <input type="text" id="prod-nombre" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="prod-precio">Precio ($):</label>
-                        <input type="number" id="prod-precio" min="0" required>
-                    </div>
-                    <div class="input-group">
-                        <label for="prod-stock">Stock disponible:</label>
-                        <input type="number" id="prod-stock" min="0" required>
-                    </div>
-                    <button type="submit" class="btn-principal">Guardar Producto</button>
-                </form>
-            </div>
+        <h2>Panel de Administración</h2>
 
-            <h3>Inventario Actual</h3>
-            <table class="admin-table">
+        <section aria-labelledby="titulo-productos">
+            <h3 id="titulo-productos">Gestión de Productos</h3>
+
+            <form id="form-producto" novalidate>
+                <fieldset>
+                    <legend>Agregar / Editar Producto</legend>
+
+                    <label for="prod-codigo">Código del producto:</label>
+                    <input type="text" id="prod-codigo" name="codigo" maxlength="20" required>
+                    <span id="error-prod-codigo" class="error-msg"></span>
+
+                    <label for="prod-nombre">Nombre:</label>
+                    <input type="text" id="prod-nombre" name="nombre" maxlength="100" required>
+                    <span id="error-prod-nombre" class="error-msg"></span>
+
+                    <label for="prod-precio">Precio ($):</label>
+                    <input type="number" id="prod-precio" name="precio" min="1" required>
+                    <span id="error-prod-precio" class="error-msg"></span>
+
+                    <label for="prod-stock">Stock disponible:</label>
+                    <input type="number" id="prod-stock" name="stock" min="0" required>
+                    <span id="error-prod-stock" class="error-msg"></span>
+
+                    <label for="prod-categoria">Categoría:</label>
+                    <select id="prod-categoria" name="categoria" required>
+                        <option value="">Seleccione una categoría</option>
+                        <option value="Herramientas Manuales">Herramientas Manuales</option>
+                        <option value="Herramientas Eléctricas">Herramientas Eléctricas</option>
+                        <option value="Materiales de Construcción">Materiales de Construcción</option>
+                        <option value="Gasfitería">Gasfitería</option>
+                    </select>
+                    <span id="error-prod-categoria" class="error-msg"></span>
+
+                    <button type="submit" class="btn-primario">Guardar Producto</button>
+                </fieldset>
+            </form>
+
+            <h4>Listado de Productos</h4>
+            <table class="tabla-admin">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Código</th>
                         <th>Nombre</th>
                         <th>Precio</th>
                         <th>Stock</th>
+                        <th>Categoría</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabla-productos-body">
                     <tr>
-                        <td>1</td>
-                        <td>Taladro Percutor 600W</td>
-                        <td>$45.000</td>
-                        <td>15</td>
-                        <td><button class="btn-secundario">Editar</button> <button class="btn-peligro">Eliminar</button></td>
+                        <td>HER-001</td>
+                        <td>Martillo de Uña 16oz</td>
+                        <td>$12.990</td>
+                        <td>25</td>
+                        <td>Herramientas Manuales</td>
+                        <td>
+                            <button type="button" class="btn-editar">Editar</button>
+                            <button type="button" class="btn-eliminar">Eliminar</button>
+                        </td>
                     </tr>
                     <tr>
-                        <td>2</td>
-                        <td>Set de Brocas (10 pzas)</td>
-                        <td>$12.500</td>
-                        <td>30</td>
-                        <td><button class="btn-secundario">Editar</button> <button class="btn-peligro">Eliminar</button></td>
+                        <td>TAL-002</td>
+                        <td>Taladro Percutor 750W</td>
+                        <td>$45.990</td>
+                        <td>10</td>
+                        <td>Herramientas Eléctricas</td>
+                        <td>
+                            <button type="button" class="btn-editar">Editar</button>
+                            <button type="button" class="btn-eliminar">Eliminar</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -73,32 +109,31 @@
 
         <hr>
 
-        <section id="seccion-usuarios" class="admin-section">
-            <h2>Gestión de Usuarios Registrados</h2>
-            <table class="admin-table">
+        <section aria-labelledby="titulo-usuarios">
+            <h3 id="titulo-usuarios">Gestión de Usuarios</h3>
+
+            <table class="tabla-admin">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Correo Electrónico</th>
-                        <th>Rol</th>
+                        <th>RUN</th>
+                        <th>Nombre Completo</th>
+                        <th>Correo</th>
+                        <th>Región</th>
+                        <th>Comuna</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="tabla-usuarios-body">
                     <tr>
-                        <td>101</td>
+                        <td>12345678-9</td>
                         <td>Juan Pérez</td>
-                        <td>juan.perez@email.com</td>
-                        <td>Cliente</td>
-                        <td><button class="btn-peligro">Bloquear</button></td>
-                    </tr>
-                    <tr>
-                        <td>102</td>
-                        <td>María González</td>
-                        <td>maria.admin@ferreteria.cl</td>
-                        <td>Administrador</td>
-                        <td><button class="btn-peligro" disabled>Bloquear</button></td>
+                        <td>juan.perez@duoc.cl</td>
+                        <td>Metropolitana</td>
+                        <td>Santiago</td>
+                        <td>
+                            <button type="button" class="btn-editar">Editar</button>
+                            <button type="button" class="btn-eliminar">Eliminar</button>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -106,7 +141,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Ferretería Los Maestros - Uso exclusivo para personal autorizado.</p>
+        <p>&copy; 2026 Ferretería Los Maestros</p>
     </footer>
+
+    <script src="js/carrito.js"></script>
 </body>
+
 </html>
