@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <title>Carrito | Ferretería Los Maestros</title>
 </head>
-
 <body>
-
     <header>
         <h1>Ferretería Los Maestros</h1>
-
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -22,15 +18,24 @@
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar sesión</a></li>
                 <li><a href="registro.html">Registrarse</a></li>
-                <li><a href="carrito.html">Carrito (0)</a></li>
+                <li><a href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Carrito</h2>
-            <p>Echa un vistazo a los productos agregados al carrito de compras.</p>
+        <section class="carrito-container">
+            <h2>Tu Carrito de Compras</h2>
+            
+            <div id="lista-carrito">
+                <p>Tu carrito está vacío.</p>
+            </div>
+
+            <div class="carrito-total">
+                <h3>Total: $<span id="precio-total">0</span></h3>
+                <button id="btn-vaciar">Vaciar Carrito</button>
+                <button id="btn-comprar">Proceder al Pago</button>
+            </div>
         </section>
     </main>
 
@@ -38,6 +43,6 @@
         <p>&copy; 2026 Ferretería Los Maestros</p>
     </footer>
 
+    <script src="js/carrito.js"></script>
 </body>
-
 </html>
