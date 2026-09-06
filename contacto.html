@@ -23,25 +23,27 @@
         </nav>
     </header>
 
-    <main>
-        <section class="form-container">
-            <h2>Contacto</h2>
-            <p>Escríbenos y te responderemos a la brevedad.</p>
-            <form id="form-contacto" action="#" method="POST" novalidate>
-                <div class="input-group">
-                    <label for="contacto-nombre">Nombre:</label>
-                    <input type="text" id="contacto-nombre" required>
-                    <span class="error-msg" id="error-contacto-nombre"></span>
-                </div>
-                <div class="input-group">
-                    <label for="contacto-mensaje">Mensaje:</label>
-                    <textarea id="contacto-mensaje" rows="4" required></textarea>
-                    <span class="error-msg" id="error-contacto-mensaje"></span>
-                </div>
-                <button type="submit">Enviar Mensaje</button>
-            </form>
-        </section>
-    </main>
+   <main>
+    <section class="contacto-container">
+        <h2>Contáctanos</h2>
+        <form id="form-contacto" action="#" method="POST">
+            <fieldset>
+                <legend>Déjanos tu mensaje</legend>
+                
+                <label for="contacto-nombre">Nombre completo:</label>
+                <input type="text" id="contacto-nombre" required>
+                
+                <label for="contacto-correo">Correo Electrónico:</label>
+                <input type="email" id="contacto-correo" required maxlength="100">
+                
+                <label for="contacto-mensaje">Comentario:</label>
+                <textarea id="contacto-mensaje" required maxlength="300" rows="5" placeholder="Escribe tu mensaje aquí (Máx 300 caracteres)"></textarea>
+            </fieldset>
+            
+            <button type="submit">Enviar Mensaje</button>
+        </form>
+    </section>
+</main>
 
     <footer>
         <p>&copy; 2026 Ferretería Los Maestros</p>
