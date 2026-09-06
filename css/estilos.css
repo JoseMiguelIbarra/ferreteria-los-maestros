@@ -196,5 +196,7 @@ textarea {
 }
 
 .error-msg {
+    display: block;
     min-height: 20px;
+    font-size: 14px;
 }
