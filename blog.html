@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <title>Blog | Ferretería Los Maestros</title>
 </head>
-
 <body>
-
     <header>
         <h1>Ferretería Los Maestros</h1>
-
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -22,22 +18,37 @@
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar sesión</a></li>
                 <li><a href="registro.html">Registrarse</a></li>
-                <li><a href="carrito.html">Carrito (0)</a></li>
+                <li><a href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h2>Blog</h2>
-            <p>Novedades y datos útiles sobre construcción y ferreteria.</p>
+        <section class="blog-lista">
+            <h2>Blog del Maestro</h2>
+            <p>Consejos, tutoriales y noticias del mundo de la construcción.</p>
+            
+            <div class="articulos-grid">
+                <article class="card-blog">
+                    <img src="img/blog1.jpg" alt="Herramientas básicas">
+                    <h3>Las 5 herramientas básicas para tu hogar</h3>
+                    <p>Descubre cuáles son las herramientas imprescindibles que todo maestro debe tener en su caja para arreglos rápidos.</p>
+                    <a href="blog1.html" class="btn-secundario">Leer artículo completo</a>
+                </article>
+
+                <article class="card-blog">
+                    <img src="img/blog2.jpg" alt="Cuidado del taladro">
+                    <h3>Cómo alargar la vida útil de tu taladro</h3>
+                    <p>El cuidado adecuado de tus herramientas eléctricas es fundamental. Aprende los mejores tips de mantenimiento.</p>
+                    <a href="blog2.html" class="btn-secundario">Leer artículo completo</a>
+                </article>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Ferretería Los Maestros</p>
     </footer>
-
+    <script src="js/carrito.js"></script>
 </body>
-
 </html>
