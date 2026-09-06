@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <title>Carrito | Ferretería Los Maestros</title>
+    <script src="js/carrito.js" defer></script>
+    <title>Carrito de Compras | Ferretería Los Maestros</title>
 </head>
+
 <body>
+
     <header>
         <h1>Ferretería Los Maestros</h1>
         <nav aria-label="Navegación principal">
@@ -18,23 +22,25 @@
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar sesión</a></li>
                 <li><a href="registro.html">Registrarse</a></li>
+                <li><a href="admin.html">Admin</a></li>
                 <li><a href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="carrito-container">
-            <h2>Tu Carrito de Compras</h2>
-            
+        <section aria-labelledby="titulo-carrito">
+            <h2 id="titulo-carrito">Tu Carrito de Compras</h2>
+
             <div id="lista-carrito">
-                <p>Tu carrito está vacío.</p>
+                <!-- Se cargará dinámicamente el contenido con JS -->
             </div>
 
-            <div class="carrito-total">
-                <h3>Total: $<span id="precio-total">0</span></h3>
-                <button id="btn-vaciar">Vaciar Carrito</button>
-                <button id="btn-comprar">Proceder al Pago</button>
+            <p><strong>Total:</strong> $<span id="precio-total">0</span></p>
+
+            <div class="acciones-carrito">
+                <button type="button" id="btn-vaciar" class="btn-secundario">Vaciar Carrito</button>
+                <button type="button" id="btn-comprar" class="btn-primario">Proceder al Pago</button>
             </div>
         </section>
     </main>
@@ -43,6 +49,6 @@
         <p>&copy; 2026 Ferretería Los Maestros</p>
     </footer>
 
-    <script src="js/carrito.js"></script>
 </body>
+
 </html>
