@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
     <title>Contacto | Ferretería Los Maestros</title>
 </head>
-
 <body>
-
     <header>
         <h1>Ferretería Los Maestros</h1>
-
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -28,9 +24,22 @@
     </header>
 
     <main>
-        <section>
+        <section class="form-container">
             <h2>Contacto</h2>
-            <p>¿Tienes dudas? Contáctanos a través de nuestro formulario.</p>
+            <p>Escríbenos y te responderemos a la brevedad.</p>
+            <form id="form-contacto" action="#" method="POST" novalidate>
+                <div class="input-group">
+                    <label for="contacto-nombre">Nombre:</label>
+                    <input type="text" id="contacto-nombre" required>
+                    <span class="error-msg" id="error-contacto-nombre"></span>
+                </div>
+                <div class="input-group">
+                    <label for="contacto-mensaje">Mensaje:</label>
+                    <textarea id="contacto-mensaje" rows="4" required></textarea>
+                    <span class="error-msg" id="error-contacto-mensaje"></span>
+                </div>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
         </section>
     </main>
 
@@ -38,6 +47,6 @@
         <p>&copy; 2026 Ferretería Los Maestros</p>
     </footer>
 
+    <script src="js/validaciones.js"></script>
 </body>
-
 </html>
