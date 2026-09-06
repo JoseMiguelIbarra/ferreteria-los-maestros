@@ -166,3 +166,35 @@ article a {
     }
 }
 
+/* Formularios */
+
+form {
+    max-width: 600px;
+}
+
+fieldset {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+}
+
+.error-msg {
+    min-height: 20px;
+}
