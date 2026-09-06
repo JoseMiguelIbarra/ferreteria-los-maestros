@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Panel de Administración | Ferretería Los Maestros</title>
+</head>
+<body>
+    <header>
+        <h1>Panel de Administración</h1>
+        <nav aria-label="Navegación de administrador">
+            <ul>
+                <li><a href="index.html">Volver a la Tienda</a></li>
+                <li><a href="#seccion-productos">Gestión de Productos</a></li>
+                <li><a href="#seccion-usuarios">Gestión de Usuarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="seccion-productos" class="admin-section">
+            <h2>Gestión de Productos</h2>
+            
+            <div class="form-container">
+                <h3>Agregar Nuevo Producto</h3>
+                <form id="form-admin-producto" action="#" method="POST">
+                    <div class="input-group">
+                        <label for="prod-nombre">Nombre de la herramienta:</label>
+                        <input type="text" id="prod-nombre" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="prod-precio">Precio ($):</label>
+                        <input type="number" id="prod-precio" min="0" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="prod-stock">Stock disponible:</label>
+                        <input type="number" id="prod-stock" min="0" required>
+                    </div>
+                    <button type="submit" class="btn-principal">Guardar Producto</button>
+                </form>
+            </div>
+
+            <h3>Inventario Actual</h3>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Taladro Percutor 600W</td>
+                        <td>$45.000</td>
+                        <td>15</td>
+                        <td><button class="btn-secundario">Editar</button> <button class="btn-peligro">Eliminar</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Set de Brocas (10 pzas)</td>
+                        <td>$12.500</td>
+                        <td>30</td>
+                        <td><button class="btn-secundario">Editar</button> <button class="btn-peligro">Eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <section id="seccion-usuarios" class="admin-section">
+            <h2>Gestión de Usuarios Registrados</h2>
+            <table class="admin-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Correo Electrónico</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>101</td>
+                        <td>Juan Pérez</td>
+                        <td>juan.perez@email.com</td>
+                        <td>Cliente</td>
+                        <td><button class="btn-peligro">Bloquear</button></td>
+                    </tr>
+                    <tr>
+                        <td>102</td>
+                        <td>María González</td>
+                        <td>maria.admin@ferreteria.cl</td>
+                        <td>Administrador</td>
+                        <td><button class="btn-peligro" disabled>Bloquear</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Ferretería Los Maestros - Uso exclusivo para personal autorizado.</p>
+    </footer>
+</body>
+</html>

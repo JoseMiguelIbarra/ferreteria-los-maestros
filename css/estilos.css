@@ -98,5 +98,25 @@ article a {
     cursor: pointer;
 }
 
-/* Nosotros */
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+.admin-table th, .admin-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+.admin-table th {
+    background-color: #f4f4f4;
+}
+.btn-peligro {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
 
