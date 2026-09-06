@@ -75,7 +75,11 @@ function renderizarCarrito() {
 }
 
 function eliminarProducto(indice) {
-    carrito.splice(indice, 1);
+    if (carrito[indice].cantidad > 1) {
+        carrito[indice].cantidad--;
+    } else {
+        carrito.splice(indice, 1);
+    }
     guardarCarrito();
     renderizarCarrito();
 }

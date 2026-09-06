@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/estilos.css">
-    <title>Ferretería Los Maestros</title>
+    <title>Inicio | Ferretería Los Maestros</title>
 </head>
-
 <body>
 
     <header>
         <h1>Ferretería Los Maestros</h1>
-
         <nav aria-label="Navegación principal">
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -22,50 +19,55 @@
                 <li><a href="contacto.html">Contacto</a></li>
                 <li><a href="login.html">Iniciar sesión</a></li>
                 <li><a href="registro.html">Registrarse</a></li>
-                <li><a href="carrito.html">Carrito (0)</a></li>
+                <li><a href="carrito.html">Carrito (<span id="contador-carrito">0</span>)</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+        <section class="info-tienda">
+            <h2>Bienvenidos a tu ferretería de confianza</h2>
+            <img src="img/ferreteria.jpg" alt="Fachada de Ferretería Los Maestros" class="img-destacada">
+            <p>Encuentra las mejores herramientas y materiales de construcción con la asesoría de los verdaderos maestros. Calidad, variedad y buenos precios para todos tus proyectos.</p>
+        </section>
 
-    <section aria-labelledby="presentacion">
-        <h2 id="presentacion">Bienvenidos a Ferretería Los Maestros</h2>
+        <hr>
 
-        <p>
-            Encuentra materiales de construcción, herramientas y productos
-            de ferretería para tus proyectos.
-        </p>
+        <section class="productos-destacados">
+            <h2>Productos Destacados</h2>
+            
+            <section class="articulos-grid">
+                <article class="card-producto">
+                    <img src="img/producto-ejemplo.jpg" alt="Taladro Percutor 600W">
+                    <h3>Taladro Percutor 600W</h3>
+                    <p>Precio: $45.000</p>
+                    <button type="button" onclick="agregarAlCarrito('HER001', 'Taladro Percutor 600W', 45000)">Agregar al carrito</button>
+                </article>
 
-        <figure>
-            <img src="img/ferreteria.jpg"
-                 alt="Interior de Ferretería Los Maestros">
-        </figure>
-    </section>
-
-    <section aria-labelledby="productos-destacados">
-        <h2 id="productos-destacados">Productos destacados</h2>
-
-        <article>
-            <h3>Producto destacado</h3>
-
-            <figure>
-                <img src="img/producto-ejemplo.jpg"
-                     alt="Producto destacado de la ferretería">
-            </figure>
-
-            <p>Precio: $0</p>
-
-            <a href="productos.html">Ver productos</a>
-        </article>
-    </section>
-
-</main>
+                <article class="card-producto">
+                    <img src="img/producto-ejemplo.jpg" alt="Set de Brocas (10 pzas)">
+                    <h3>Set de Brocas (10 pzas)</h3>
+                    <p>Precio: $12.500</p>
+                    <button type="button" onclick="agregarAlCarrito('HER002', 'Set de Brocas', 12500)">Agregar al carrito</button>
+                </article>
+                
+                <article class="card-producto">
+                    <img src="img/producto-ejemplo.jpg" alt="Cemento Polpaico 25 kg">
+                    <h3>Cemento Polpaico 25 kg</h3>
+                    <p>Precio: $5.990</p>
+                    <button type="button" onclick="agregarAlCarrito('MC001', 'Cemento Polpaico 25 kg', 5990)">Agregar al carrito</button>
+                </article>
+            </section>
+            
+            <p><a href="productos.html" class="btn-secundario">Ver todo el catálogo</a></p>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 Ferretería Los Maestros</p>
     </footer>
 
-</body>
+    <script src="js/carrito.js"></script>
 
+</body>
 </html>

@@ -140,9 +140,11 @@ if (listaProductos) {
     stock.textContent =
         "Stock disponible: " + producto.stock;
 
-    const boton = document.createElement("button");
-    boton.textContent = "Agregar al carrito";
-    boton.type = "button";
+    const btnAgregar = document.createElement('button');
+    btnAgregar.textContent = 'Agregar al carrito';
+    btnAgregar.addEventListener('click', () => {
+        agregarAlCarrito(producto.id, producto.nombre, producto.precio);
+    });
 
     articulo.appendChild(nombre);
     articulo.appendChild(marca);
